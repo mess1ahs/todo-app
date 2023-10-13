@@ -9,6 +9,20 @@ Asegúrate de tener los siguientes requisitos instalados en tu sistema:
 - Go: Versión 1.21.3 o superior.
 - Docker: Para construir y ejecutar la aplicación en un contenedor.
 
+1 - Instalacion GoLang (https://go.dev/dl/):
+ - Descargar version de windows. (https://go.dev/dl/go1.21.3.windows-amd64.msi)
+ - Ejecutar el archivo go1.21.3.windows-amd64.msi y seguir los pasos de instalacion.
+ - En este caso se realizo la instalacion por defecto.
+   (go version go1.21.3 windows/amd64)
+
+2 - Instalacion Docker (https://www.docker.com/get-started/):
+ - Descargar version de windows. (https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=module&_gl=1*1xi0fco*_ga*MTk3MTEyMDcwMC4xNjk3MTQxMTcw*_ga_XJWPQMJYHQ*MTY5NzE0MTE3MC4xLjEuMTY5NzE0MTE3My41Ny4wLjA.)
+ -  Ejecutar archivo "Docker Desktop Installe.exe".
+ -  Seguir los  pasos de instalacion.
+ -  En este caso se realizo la instalacion por defecto.
+   (Docker version 24.0.6, build ed223bc)
+
+
 ## Instrucciones
 
 ### Construir y ejecutar la aplicación localmente
