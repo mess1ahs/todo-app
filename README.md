@@ -16,7 +16,7 @@ Asegúrate de tener los siguientes requisitos instalados en tu sistema:
 1. Clona este repositorio:
 
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
+   git clone https://github.com/mess1ahs/todo-app.git
    cd todo-app
 
 2. Ejecuta el build del proyecto y ejecuta el container
@@ -27,23 +27,29 @@ Asegúrate de tener los siguientes requisitos instalados en tu sistema:
 ## Documentacion:
 
 1. Endpoints de la API (Open API)
-Archivo: 
+Archivo: open-api.yml
 
 La aplicación expone los siguientes endpoints de la API:
 
 POST /tasks: Crea una nueva tarea.
+
 GET /tasks: Obtiene la lista de tareas existentes.
+
 GET /tasks/{id}: Obtiene una tarea específica por ID.
+
 PUT /tasks/: Actualiza una tarea existente por ID.
+
 DELETE /tasks/{id}: Elimina una tarea por ID.
+
+Documentacion en la carpeta docs/ (index.html)
 
 
 2. Coleccion Postman
 
-Archivo: todo-app.postman_collection.json
+- Archivo: todo-app.postman_collection.json
 
 3. Estructura del proyecto
 
-main.go: El archivo principal que inicia el servidor de la aplicación.
-models/task.go: Define el modelo de tarea y las funciones para interactuar con la base de datos.
-Dockerfile: El archivo de Docker para construir una imagen de contenedor para la aplicación.
+- main.go: El archivo principal que inicia el servidor de la aplicación.
+- models/task.go: Define el modelo de tarea y las funciones para interactuar con la base de datos.
+- Dockerfile: El archivo de Docker para construir una imagen de contenedor para la aplicación.
