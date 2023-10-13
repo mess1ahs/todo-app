@@ -1,0 +1,135 @@
+openapi: 3.0.0
+info:
+  title: TODO App - API de Tareas
+  description: Documentación de la API para la aplicación de lista de tareas
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:8080
+    description: Servidor local
+
+paths:
+  /tasks:
+    get:
+      summary: Obtener lista de tareas
+      description: Obtiene la lista de todas las tareas.
+      responses:
+        '200':
+          description: Respuesta exitosa
+          content:
+            application/json:
+              example:
+                data:
+                  - id: 1
+                    title: "Tarea 1"
+                    done: false
+                  - id: 2
+                    title: "Tarea 2"
+                    done: true
+      tags:
+        - Tareas
+
+    post:
+      summary: Crear nueva tarea
+      description: Crea una nueva tarea con el título proporcionado.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+              example:
+                title: "Nueva Tarea"
+      responses:
+        '200':
+          description: Respuesta exitosa
+          content:
+            application/json:
+              example:
+                message: "Nueva tarea creada"
+                id: 3
+      tags:
+        - Tareas
+
+  /tasks/{id}:
+    get:
+      summary: Obtener tarea por ID
+      description: Obtiene una tarea específica por su ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: 1
+      responses:
+        '200':
+          description: Respuesta exitosa
+          content:
+            application/json:
+              example:
+                data:
+                  id: 1
+                  title: "Tarea 1"
+                  done: false
+      tags:
+        - Tareas
+
+    put:
+      summary: Actualizar tarea por ID
+      description: Actualiza una tarea existente por su ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                done:
+                  type: boolean
+              example:
+                title: "Tarea Actualizada"
+                done: true
+      responses:
+        '200':
+          description: Respuesta exitosa
+          content:
+            application/json:
+              example:
+                message: "Tarea actualizada"
+      tags:
+        - Tareas
+
+    delete:
+      summary: Eliminar tarea por ID
+      description: Elimina una tarea existente por su ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: 1
+      responses:
+        '200':
+          description: Respuesta exitosa
+          content:
+            application/json:
+              example:
+                message: "Tarea eliminada"
+      tags:
+        - Tareas
+
+tags:
+  - name: Tareas
+    description: Endpoints relacionados con las tareas
